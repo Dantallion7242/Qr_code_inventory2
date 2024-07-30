@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details & QR Code Scanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<script>
+    function printDetails() {
+        window.print();  // Opens the print dialog
+    }
+</script>
+<body>
+    <div class="container">
+        <h1>Item Details</h1>
+        {% if item %}
+            <p><strong>Unique Key:</strong> {{ item[1] }}</p>
+            <p><strong>Name:</strong> {{ item[2] }}</p>
+            <p><strong>Date:</strong> {{ item[3] }}</p>
+            <p><strong>Year Made:</strong> {{ item[4] }}</p>
+            <p><strong>Type:</strong> {{ item[5] }}</p>
+            <p><strong>Origin:</strong> {{ item[6] }}</p>
+            <p><strong>Status:</strong> {{ item[7] }}</p>
+            <img src="{{ url_for('static', filename='qr_' + item[1] + '.png') }}" alt="QR Code">
+            <button onclick="printDetails()">Print</button> <!-- Print button -->
+        {% else %}
+            <p>Item not found.</p>
+        {% endif %}
+        <a href="/dashboard">Back to Home</a>
+
+        <h1 style="margin-top: 40px;">QR Code Scanner</h1>
+        <button id="start-camera">Open Camera</button>
+        <video id="video" width="300" height="300" autoplay style="display:none;"></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <button id="capture" style="display:none;">Capture</button>
+        <p id="result"></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

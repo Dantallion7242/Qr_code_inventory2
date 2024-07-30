@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+</head>
+<body>
+    <h1>QR Code Generated!</h1>
+    <img src="{{ qr_file_path }}" alt="QR Code">
+    <p>Unique Key: {{ unique_key }}</p>
+    <p>Use the following link to view item details:</p>
+    <a href="{{ url_for('item', unique_key=unique_key) }}">View Item Details</a>
+    <a href="/">Add Another Item</a>
+</body>
+</html>
