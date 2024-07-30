@@ -30,16 +30,13 @@ To set up the project locally, follow these steps:
    ```bash
    git clone https://github.com/yourusername/inventory-management-system.git
 Navigate to the project directory:
-bash
-Copy code
+
 cd inventory-management-system
 Install the required dependencies:
-bash
-Copy code
+
 pip install -r requirements.txt
 Run the application:
 bash
-Copy code
 python app.py
 Open your web browser and navigate to http://127.0.0.1:5000.
 Usage
@@ -51,15 +48,13 @@ Dashboard: View all items in the inventory, along with their details and counts 
 Contributing
 Contributions are welcome! If you'd like to contribute, please fork the repository and create a pull request with your changes.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
 
 Acknowledgments
 Flask - The web framework used.
 SQLite - The database solution.
 Chart.js - For data visualization.
-Contact
-For any inquiries or feedback, please reach out to me at your-email@example.com.
+
 
 vbnet
 Copy code
